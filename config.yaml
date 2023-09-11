@@ -1,0 +1,28 @@
+preprocess_dir: 'data/SEED/SEED_EEG/Preprocessed_EEG'
+save_path: 'data/preprocessed_data'
+
+channels: 62
+persons: 15
+sessions: 3
+sectors: 15
+bands: [1, 4, 8, 14, 31, 50]
+test_ratio: 0.1
+batch_size: 1024
+feature_size: 5
+#max_iter: 40000
+max_iter: 4
+
+key_prefix: ['ww', 'ww', 'ww', 'wsf', 'wsf', 'wsf', 'wyw', 'wyw', 'wyw',
+              'xyl', 'xyl', 'xyl', 'ys', 'ys', 'ys', 'zjy', 'zjy', 'zjy',
+              'djc', 'djc', 'djc', 'jl', 'jl', 'jl', 'jj', 'jj', 'jj',
+              'lqj', 'lqj', 'lqj', 'ly', 'ly', 'ly', 'mhw', 'mhw', 'mhw',
+              'phl', 'phl', 'phl', 'sxy', 'sxy', 'sxy', 'wk', 'wk', 'wk']
+
+models:
+  #- ['offset1-model', 1]
+  - ['offset10-model', 10]
+
+#embedding_dimensions: [32, 16, 8]
+embedding_dimensions: [32]
+embeddings: ['none', 'emo', 'subject']
+windows: [4000, 1000, 100, 10]
